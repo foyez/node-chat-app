@@ -3,9 +3,9 @@ const socket = io()
 socket.on('connect', function () {
   console.log('Connected to server')
 
-  socket.emit('createEmail', {
-    to: 'rayyan@email.com',
-    text: 'Hey. This is Foyez.'
+  socket.emit('createMessage', {
+    from: 'Foyez',
+    text: 'what\'s up'
   })
 })
 
@@ -13,6 +13,6 @@ socket.on('disconnect', function () {
   console.log('Disconnected from server')
 })
 
-socket.on('newEmail', function (email) {
-  console.log('New email', email)
+socket.on('newMessage', function (message) {
+  console.log('New Message', message)
 })
